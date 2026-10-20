@@ -1,0 +1,37 @@
+class LoginPage {
+  constructor(page) {
+    this.page = page;
+    this.form = page.getByTestId('login-form');
+    this.email = page.getByTestId('login-email-input');
+    this.password = page.getByTestId('login-password-input');
+    this.loginButton = page.getByTestId('login-submit-button');
+    this.registerLink = page.getByTestId('agent-registration-link');
+    this.forgotPasswordLink = page.getByTestId('forgot-password-link');
+    this.demoHint = page.getByTestId('login-demo-hint');
+    this.statusAlert = page.getByTestId('status-alert');
+    this.errorMessage = page.locator('.invalid-feedback, .alert-danger');
+  }
+
+  async goto() {
+    await this.page.goto(`${process.env.BASE_URL}/login`);
+  }
+
+  async login(email, password) {
+    await this.email.fill(email);
+    await this.password.fill(password);
+    await this.loginButton.click();
+  }
+
+  /** Logout is a POST form in the header. Submitting it directly avoids the dropdown. */
+  async logout() {
+    await this.page.locator('form[action$="/logout"]').first().evaluate((f) => f.submit());
+    await this.page.waitForURL(/\/login/);
+  }
+
+  async errorText() {
+    const texts = await this.errorMessage.allInnerTexts();
+    return texts.join(' | ').trim();
+  }
+}
+
+module.exports = { LoginPage };
