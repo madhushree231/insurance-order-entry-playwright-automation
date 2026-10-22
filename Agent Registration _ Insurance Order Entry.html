@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agent Registration | Insurance Order Entry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f6f8fb; }
+        .page-shell { padding-top: 24px; padding-bottom: 48px; }
+        .tf-card { border: 0; border-radius: 16px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06); }
+        .step-link { text-decoration:none; }
+        .small-label { font-size: .76rem; letter-spacing:.02em; text-transform:uppercase; color:#6c757d; }
+        .status-pill { font-size:.75rem; }
+
+        .tf-brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0d6efd, #084298);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: .02em;
+            box-shadow: 0 6px 14px rgba(13, 110, 253, 0.25);
+        }
+
+        .tf-brand-title {
+            line-height: 1.1;
+        }
+
+        .tf-brand-title .main-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #172033;
+        }
+
+        .tf-brand-title .sub-title {
+            font-size: .74rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body data-testid="app-layout">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" data-testid="main-navigation">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="http://34.180.26.96:8081/dashboard" data-testid="nav-brand">
+            <span class="tf-brand-logo" aria-hidden="true">IO</span>
+            <span class="tf-brand-title">
+                <span class="main-title d-block">Insurance Order Entry Demo Platform</span>
+                <span class="sub-title d-block">QA Automation Training App</span>
+            </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/dashboard" data-testid="nav-dashboard-link">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/applications" data-testid="nav-applications-link">Applications</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/products" data-testid="nav-products-link">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/support" data-testid="nav-support-link">Support</a>
+                </li>
+
+                            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <a class="text-decoration-none small" href="http://34.180.26.96:8081/profile" data-testid="nav-profile-link">
+                    Agent
+                </a>
+
+                <form method="POST" action="http://34.180.26.96:8081/logout" class="mb-0">
+                    <input type="hidden" name="_token" value="hP1N3k3f3T65ISbgsnt2pDl1EXpwhYkSmqyejf2F" autocomplete="off">                    <button class="btn btn-outline-secondary btn-sm" data-testid="nav-logout-button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="container page-shell">
+                <style>
+    .tf-page-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .tf-page-title {
+        margin: 0;
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .tf-page-subtitle {
+        margin: .25rem 0 0;
+        color: #6c757d;
+    }
+
+    .tf-card {
+        border: 1px solid #e5e7eb;
+        border-radius: .75rem;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, .05);
+    }
+
+    .small-label {
+        font-size: .75rem;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        color: #6c757d;
+        font-weight: 600;
+    }
+</style>
+
+<div class="row justify-content-center" data-testid="agent-registration-page">
+    <div class="col-md-6 col-lg-5">
+        <div class="card tf-card">
+            <div class="card-body p-4">
+                <h1 class="h4 mb-2">Agent Registration</h1>
+                <p class="text-muted mb-4">Register with email, phone number, and agent license number.</p>
+
+                <form method="POST" action="http://34.180.26.96:8081/register" data-testid="agent-registration-form">
+                    <input type="hidden" name="_token" value="hP1N3k3f3T65ISbgsnt2pDl1EXpwhYkSmqyejf2F" autocomplete="off">
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Email ID</label>
+                        <input id="email" name="email" type="email"
+                               class="form-control "
+                               value=""
+                               required
+                               data-testid="agent-registration-email">
+                                            </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="phone_number">Phone Number</label>
+                        <input id="phone_number" name="phone_number" type="text"
+                               class="form-control "
+                               value=""
+                               required
+                               data-testid="agent-registration-phone">
+                                            </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="agent_license_number">Agent License Number</label>
+                        <input id="agent_license_number" name="agent_license_number" type="text"
+                               class="form-control "
+                               value=""
+                               required
+                               data-testid="agent-registration-license">
+                        <div class="form-text">
+                            Demo valid licenses: LIC-CA-10001, LIC-NY-10002, LIC-TX-10003, LIC-FL-10004
+                        </div>
+                                            </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password</label>
+                        <input id="password" name="password" type="password"
+                               class="form-control "
+                               required
+                               data-testid="agent-registration-password">
+                        <div class="form-text" id="password-strength-text" data-testid="password-strength-text">
+                            Minimum 12 characters with uppercase, lowercase, digit, and special character.
+                        </div>
+                                            </div>
+
+                    <div class="mb-4">
+                        <label class="form-label" for="password_confirmation">Confirm Password</label>
+                        <input id="password_confirmation" name="password_confirmation" type="password"
+                               class="form-control"
+                               required
+                               data-testid="agent-registration-password-confirmation">
+                    </div>
+
+                    <button class="btn btn-primary w-100" data-testid="agent-registration-submit">
+                        Register Agent
+                    </button>
+                </form>
+
+                <div class="text-center mt-3">
+                    <a href="http://34.180.26.96:8081/login" data-testid="agent-registration-login-link">
+                        Already registered? Sign in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const password = document.getElementById('password');
+    const email = document.getElementById('email');
+    const text = document.getElementById('password-strength-text');
+
+    function getEmailUsername() {
+        if (!email || !email.value) {
+            return '';
+        }
+
+        return email.value.split('@')[0].toLowerCase();
+    }
+
+    function evaluatePassword(value) {
+        const checks = [];
+        const lower = value.toLowerCase();
+        const emailUsername = getEmailUsername();
+
+        if (!value) {
+            return 'Minimum 12 characters with uppercase, lowercase, digit, and special character.';
+        }
+
+        checks.push({ ok: value.length >= 12, message: 'at least 12 characters' });
+        checks.push({ ok: /[A-Z]/.test(value), message: 'one uppercase letter' });
+        checks.push({ ok: /[a-z]/.test(value), message: 'one lowercase letter' });
+        checks.push({ ok: /[0-9]/.test(value), message: 'one digit' });
+        checks.push({ ok: /[!@#$%^&*]/.test(value), message: 'one special character (!@#$%^&*)' });
+        checks.push({ ok: !emailUsername || !lower.includes(emailUsername), message: 'must not contain email username' });
+        checks.push({
+            ok: !/(1234|2345|3456|4567|abcd|qwer|password|welcome|admin|letmein)/i.test(value),
+            message: 'must not contain common or sequential patterns'
+        });
+        checks.push({ ok: !/(.)\1\1/i.test(value), message: 'must not contain repeated characters such as aaa or 111' });
+
+        const failed = checks.filter(function (check) {
+            return !check.ok;
+        });
+
+        if (failed.length === 0) {
+            return 'Password strength: Strong';
+        }
+
+        const missing = failed.map(function (check) {
+            return check.message;
+        }).join(', ');
+
+        if (failed.length <= 2) {
+            return 'Password strength: Medium — missing: ' + missing;
+        }
+
+        return 'Password strength: Weak — missing: ' + missing;
+    }
+
+    function refreshStrength() {
+        if (password && text) {
+            text.textContent = evaluatePassword(password.value);
+        }
+    }
+
+    if (password && text) {
+        password.addEventListener('input', refreshStrength);
+    }
+
+    if (email && password && text) {
+        email.addEventListener('input', refreshStrength);
+    }
+})();
+</script>
+    </main>
+
+    <footer class="border-top bg-white py-3" data-testid="app-footer">
+    <div class="container small text-muted d-flex justify-content-between">
+        <span>TalentFarm QA Automation Lab</span>
+        <span>Insurance Order Entry Demo</span>
+    </div>
+</footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

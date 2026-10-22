@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Insurance Order Entry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f6f8fb; }
+        .page-shell { padding-top: 24px; padding-bottom: 48px; }
+        .tf-card { border: 0; border-radius: 16px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06); }
+        .step-link { text-decoration:none; }
+        .small-label { font-size: .76rem; letter-spacing:.02em; text-transform:uppercase; color:#6c757d; }
+        .status-pill { font-size:.75rem; }
+
+        .tf-brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0d6efd, #084298);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: .02em;
+            box-shadow: 0 6px 14px rgba(13, 110, 253, 0.25);
+        }
+
+        .tf-brand-title {
+            line-height: 1.1;
+        }
+
+        .tf-brand-title .main-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #172033;
+        }
+
+        .tf-brand-title .sub-title {
+            font-size: .74rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body data-testid="app-layout">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" data-testid="main-navigation">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="http://34.180.26.96:8081/dashboard" data-testid="nav-brand">
+            <span class="tf-brand-logo" aria-hidden="true">IO</span>
+            <span class="tf-brand-title">
+                <span class="main-title d-block">Insurance Order Entry Demo Platform</span>
+                <span class="sub-title d-block">QA Automation Training App</span>
+            </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/dashboard" data-testid="nav-dashboard-link">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/applications" data-testid="nav-applications-link">Applications</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/products" data-testid="nav-products-link">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/support" data-testid="nav-support-link">Support</a>
+                </li>
+
+                            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <a class="text-decoration-none small" href="http://34.180.26.96:8081/profile" data-testid="nav-profile-link">
+                    Demo Agent Florida
+                </a>
+
+                <form method="POST" action="http://34.180.26.96:8081/logout" class="mb-0">
+                    <input type="hidden" name="_token" value="6yZguEdDqLRZLhKjHBbOu79VtA3yZi2MK7fQf1bR" autocomplete="off">                    <button class="btn btn-outline-secondary btn-sm" data-testid="nav-logout-button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="container page-shell">
+                <div class="d-flex justify-content-between align-items-start mb-4" data-testid="dashboard-page">
+    <div>
+        <h1 class="h3 mb-1">Agent Dashboard</h1>
+        <p class="text-muted mb-0">Track drafts, submitted applications, and policy order entry work.</p>
+    </div>
+    <a href="http://34.180.26.96:8081/applications/new" class="btn btn-primary" data-testid="dashboard-new-application-button">Start New Application</a>
+</div>
+<div class="row g-3 mb-4">
+            <div class="col-6 col-md">
+            <div class="card tf-card" data-testid="dashboard-summary-draft">
+                <div class="card-body">
+                    <div class="small-label">Draft</div>
+                    <div class="display-6 fw-semibold">34</div>
+                </div>
+            </div>
+        </div>
+            <div class="col-6 col-md">
+            <div class="card tf-card" data-testid="dashboard-summary-submitted">
+                <div class="card-body">
+                    <div class="small-label">Submitted</div>
+                    <div class="display-6 fw-semibold">6</div>
+                </div>
+            </div>
+        </div>
+            <div class="col-6 col-md">
+            <div class="card tf-card" data-testid="dashboard-summary-under-review">
+                <div class="card-body">
+                    <div class="small-label">Under Review</div>
+                    <div class="display-6 fw-semibold">0</div>
+                </div>
+            </div>
+        </div>
+            <div class="col-6 col-md">
+            <div class="card tf-card" data-testid="dashboard-summary-approved">
+                <div class="card-body">
+                    <div class="small-label">Approved</div>
+                    <div class="display-6 fw-semibold">0</div>
+                </div>
+            </div>
+        </div>
+            <div class="col-6 col-md">
+            <div class="card tf-card" data-testid="dashboard-summary-requires-info">
+                <div class="card-body">
+                    <div class="small-label">Requires Info</div>
+                    <div class="display-6 fw-semibold">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="card tf-card">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <h2 class="h5 mb-0">Recent Applications</h2>
+        <a href="http://34.180.26.96:8081/applications" data-testid="dashboard-view-all-applications-link">View all</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table align-middle mb-0" data-testid="dashboard-applications-table">
+            <thead><tr><th>Reference</th><th>Client</th><th>Product</th><th>Status</th><th>Updated</th><th></th></tr></thead>
+            <tbody>
+                            <tr data-testid="application-row-100">
+                    <td>Draft #100</td>
+                    <td>Qa Applicant</td>
+                    <td>Elite Legacy Whole Life</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-100">DRAFT</span></td>
+                    <td>22 Oct 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/100" class="btn btn-sm btn-outline-primary" data-testid="application-open-100">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-99">
+                    <td>Draft #99</td>
+                    <td>Qa Applicant</td>
+                    <td>Elite Legacy Whole Life</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-99">DRAFT</span></td>
+                    <td>22 Oct 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/99" class="btn btn-sm btn-outline-primary" data-testid="application-open-99">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-98">
+                    <td>Draft #98</td>
+                    <td>Qa Applicant</td>
+                    <td>Not selected</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-98">DRAFT</span></td>
+                    <td>22 Oct 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/98" class="btn btn-sm btn-outline-primary" data-testid="application-open-98">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-97">
+                    <td>Draft #97</td>
+                    <td> </td>
+                    <td>Not selected</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-97">DRAFT</span></td>
+                    <td>22 Oct 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/97" class="btn btn-sm btn-outline-primary" data-testid="application-open-97">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-96">
+                    <td>Draft #96</td>
+                    <td>Qa Applicant</td>
+                    <td>Not selected</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-96">DRAFT</span></td>
+                    <td>22 Oct 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/96" class="btn btn-sm btn-outline-primary" data-testid="application-open-96">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-95">
+                    <td>Draft #95</td>
+                    <td> </td>
+                    <td>Not selected</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-95">DRAFT</span></td>
+                    <td>22 Oct 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/95" class="btn btn-sm btn-outline-primary" data-testid="application-open-95">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-WL2026090437011">
+                    <td>WL2026090437011</td>
+                    <td>Test Test</td>
+                    <td>FlexiPay Whole Life</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-94">SUBMITTED</span></td>
+                    <td>04 Sep 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/94" class="btn btn-sm btn-outline-primary" data-testid="application-open-94">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-93">
+                    <td>Draft #93</td>
+                    <td> </td>
+                    <td>Not selected</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-93">DRAFT</span></td>
+                    <td>04 Sep 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/93" class="btn btn-sm btn-outline-primary" data-testid="application-open-93">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-92">
+                    <td>Draft #92</td>
+                    <td> </td>
+                    <td>Not selected</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-92">DRAFT</span></td>
+                    <td>04 Sep 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/92" class="btn btn-sm btn-outline-primary" data-testid="application-open-92">Open</a></td>
+                </tr>
+                            <tr data-testid="application-row-91">
+                    <td>Draft #91</td>
+                    <td> </td>
+                    <td>Not selected</td>
+                    <td><span class="badge text-bg-secondary status-pill" data-testid="application-status-91">DRAFT</span></td>
+                    <td>04 Sep 2026</td>
+                    <td><a href="http://34.180.26.96:8081/applications/91" class="btn btn-sm btn-outline-primary" data-testid="application-open-91">Open</a></td>
+                </tr>
+                        </tbody>
+        </table>
+    </div>
+</div>
+    </main>
+
+    <footer class="border-top bg-white py-3" data-testid="app-footer">
+    <div class="container small text-muted d-flex justify-content-between">
+        <span>TalentFarm QA Automation Lab</span>
+        <span>Insurance Order Entry Demo</span>
+    </div>
+</footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

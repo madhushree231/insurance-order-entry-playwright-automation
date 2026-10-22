@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product &amp; Policy Configuration | Insurance Order Entry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f6f8fb; }
+        .page-shell { padding-top: 24px; padding-bottom: 48px; }
+        .tf-card { border: 0; border-radius: 16px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06); }
+        .step-link { text-decoration:none; }
+        .small-label { font-size: .76rem; letter-spacing:.02em; text-transform:uppercase; color:#6c757d; }
+        .status-pill { font-size:.75rem; }
+
+        .tf-brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0d6efd, #084298);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: .02em;
+            box-shadow: 0 6px 14px rgba(13, 110, 253, 0.25);
+        }
+
+        .tf-brand-title {
+            line-height: 1.1;
+        }
+
+        .tf-brand-title .main-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #172033;
+        }
+
+        .tf-brand-title .sub-title {
+            font-size: .74rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body data-testid="app-layout">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" data-testid="main-navigation">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="http://34.180.26.96:8081/dashboard" data-testid="nav-brand">
+            <span class="tf-brand-logo" aria-hidden="true">IO</span>
+            <span class="tf-brand-title">
+                <span class="main-title d-block">Insurance Order Entry Demo Platform</span>
+                <span class="sub-title d-block">QA Automation Training App</span>
+            </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/dashboard" data-testid="nav-dashboard-link">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/applications" data-testid="nav-applications-link">Applications</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/products" data-testid="nav-products-link">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/support" data-testid="nav-support-link">Support</a>
+                </li>
+
+                            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <a class="text-decoration-none small" href="http://34.180.26.96:8081/profile" data-testid="nav-profile-link">
+                    Demo Agent Florida
+                </a>
+
+                <form method="POST" action="http://34.180.26.96:8081/logout" class="mb-0">
+                    <input type="hidden" name="_token" value="6yZguEdDqLRZLhKjHBbOu79VtA3yZi2MK7fQf1bR" autocomplete="off">                    <button class="btn btn-outline-secondary btn-sm" data-testid="nav-logout-button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="container page-shell">
+                <style>
+    .tf-page-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .tf-page-title {
+        margin: 0;
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .tf-page-subtitle {
+        margin: .25rem 0 0;
+        color: #6c757d;
+    }
+
+    .tf-card {
+        border: 1px solid #e5e7eb;
+        border-radius: .75rem;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, .05);
+    }
+
+    .small-label {
+        font-size: .75rem;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        color: #6c757d;
+        font-weight: 600;
+    }
+</style>
+<div class="d-flex justify-content-between align-items-center mb-3" data-testid="workflow-navigation">
+    <div>
+                    <a href="http://34.180.26.96:8081/applications/100/kyc-financial"
+               class="btn btn-outline-secondary"
+               data-testid="workflow-back-button">
+                ← Back to KYC &amp; Financial
+            </a>
+        
+                    <a href="http://34.180.26.96:8081/applications/100"
+               class="btn btn-outline-secondary ms-2"
+               data-testid="workflow-summary-button">
+                Application Summary
+            </a>
+            </div>
+</div>
+
+
+<div data-testid="product-configuration-page">
+    <div class="tf-page-header">
+        <div>
+            <div class="text-muted small">Application #100</div>
+            <h1 class="tf-page-title">Product & Policy Configuration</h1>
+            <p class="tf-page-subtitle">Select the product, sum assured, premium payment frequency, premium payment term, and coverage term.</p>
+        </div>
+    </div>
+
+    <div class="card tf-card">
+        <div class="card-body p-4">
+            <form method="POST" action="http://34.180.26.96:8081/applications/100/product" data-testid="product-configuration-form">
+                <input type="hidden" name="_token" value="6yZguEdDqLRZLhKjHBbOu79VtA3yZi2MK7fQf1bR" autocomplete="off">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="insurance_product_id">Product</label>
+                        <select id="insurance_product_id" name="insurance_product_id" class="form-select" data-testid="product-select" required>
+                            <option value="">Select product</option>
+                                                            <option value="3" selected>
+                                    Elite Legacy Whole Life
+                                </option>
+                                                            <option value="4" >
+                                    FlexiPay Whole Life
+                                </option>
+                                                            <option value="1" >
+                                    SecureLife Whole Life
+                                </option>
+                                                            <option value="2" >
+                                    WealthBuilder Whole Life
+                                </option>
+                                                    </select>
+                        <div class="form-text" id="product-range-help" data-testid="product-range-help"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label" for="face_value">Sum Assured</label>
+                        <input type="number" min="1" step="1" id="face_value" name="face_value" class="form-control"
+                               value="1000000.00"
+                               placeholder="$100,000"
+                               data-testid="product-sum-assured-input"
+                               required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label" for="premium_frequency">Premium Payment Frequency</label>
+                        <select id="premium_frequency" name="premium_frequency" class="form-select" data-testid="product-premium-frequency-select" required>
+                                                            <option value="MONTHLY" selected>
+                                    Monthly
+                                </option>
+                                                            <option value="QUARTERLY" >
+                                    Quarterly
+                                </option>
+                                                            <option value="SEMI_ANNUAL" >
+                                    Semi-Annual
+                                </option>
+                                                            <option value="ANNUAL" >
+                                    Annual
+                                </option>
+                                                    </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label" for="payment_term_years">Premium Payment Term</label>
+                        <select id="payment_term_years" name="payment_term_years" class="form-select" data-testid="product-payment-term-select" required>
+                            <option value="">Select term</option>
+                                                            <option value="10" >
+                                    10 years
+                                </option>
+                                                            <option value="15" selected>
+                                    15 years
+                                </option>
+                                                            <option value="20" >
+                                    20 years
+                                </option>
+                                                            <option value="25" >
+                                    25 years
+                                </option>
+                                                            <option value="30" >
+                                    30 years
+                                </option>
+                                                    </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label" for="policy_term">Coverage Term</label>
+                        <select id="policy_term" name="policy_term" class="form-select" data-testid="product-coverage-term-select" required>
+                                                            <option value="WHOLE_LIFE" selected>
+                                    Whole Life
+                                </option>
+                                                            <option value="TO_AGE_100" >
+                                    To Age 100
+                                </option>
+                                                    </select>
+                    </div>
+                </div>
+
+                <div class="card bg-light border-0 mt-4">
+                    <div class="card-body">
+                        <div class="small-label">Estimated Total Modal Premium</div>
+                        <div class="h4 mb-0" data-testid="product-current-total-premium" id="premium-preview">
+                            $508.33
+                        </div>
+                        <div class="text-muted small mt-1" id="premium-preview-help" data-testid="premium-preview-help">
+                            Premium updates when product, sum assured, or payment frequency changes.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button class="btn btn-primary" data-testid="product-save-continue-button">
+                        Save and Continue
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const products = {"3":{"name":"Elite Legacy Whole Life","rate":6.1,"min":500000,"max":5000000},"4":{"name":"FlexiPay Whole Life","rate":5.15,"min":100000,"max":1200000},"1":{"name":"SecureLife Whole Life","rate":4.75,"min":100000,"max":1000000},"2":{"name":"WealthBuilder Whole Life","rate":5.35,"min":150000,"max":1500000}};
+    const seededProd001Active = false;
+    const originalProductId = "3";
+    const originalFaceValue = "1000000.00";
+    const originalFrequency = "MONTHLY";
+    const storedPremium = 508.33;
+
+    const productSelect = document.getElementById('insurance_product_id');
+    const faceValueInput = document.getElementById('face_value');
+    const frequencySelect = document.getElementById('premium_frequency');
+    const preview = document.getElementById('premium-preview');
+    const previewHelp = document.getElementById('premium-preview-help');
+    const rangeHelp = document.getElementById('product-range-help');
+
+    function formatUsd(value) {
+        return '$' + Number(value || 0).toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
+
+    function applyFrequency(annualPremium, frequency) {
+        switch (frequency) {
+            case 'MONTHLY': return annualPremium / 12;
+            case 'QUARTERLY': return annualPremium / 4;
+            case 'SEMI_ANNUAL': return annualPremium / 2;
+            case 'ANNUAL':
+            default: return annualPremium;
+        }
+    }
+
+    function normalizedNumber(value) {
+        return String(Number(value || 0));
+    }
+
+    function isFrequencyOnlyChange() {
+        return seededProd001Active
+            && String(productSelect.value) === String(originalProductId)
+            && normalizedNumber(faceValueInput.value) === normalizedNumber(originalFaceValue)
+            && String(frequencySelect.value) !== String(originalFrequency)
+            && Number(storedPremium) > 0;
+    }
+
+    function updatePremiumPreview() {
+        const productId = productSelect.value;
+        const product = products[productId];
+        const faceValue = parseFloat(faceValueInput.value || '0');
+        const frequency = frequencySelect.value || 'ANNUAL';
+
+        if (!product) {
+            preview.textContent = 'Pending';
+            previewHelp.textContent = 'Select a product to estimate premium.';
+            rangeHelp.textContent = '';
+            return;
+        }
+
+        rangeHelp.textContent = 'Allowed Sum Assured: ' + formatUsd(product.min) + ' to ' + formatUsd(product.max);
+
+        if (!faceValue || faceValue <= 0) {
+            preview.textContent = 'Pending';
+            previewHelp.textContent = 'Enter Sum Assured to estimate premium.';
+            return;
+        }
+
+        if (isFrequencyOnlyChange()) {
+            preview.textContent = formatUsd(storedPremium);
+            previewHelp.textContent = 'Seeded defect active: premium did not update after frequency change.';
+            return;
+        }
+
+        const annualPremium = (faceValue / 1000) * Number(product.rate || 0);
+        const modalPremium = applyFrequency(annualPremium, frequency);
+
+        preview.textContent = formatUsd(modalPremium);
+        previewHelp.textContent = 'Estimated premium will be saved when you continue.';
+    }
+
+    productSelect.addEventListener('change', updatePremiumPreview);
+    faceValueInput.addEventListener('input', updatePremiumPreview);
+    frequencySelect.addEventListener('change', updatePremiumPreview);
+
+    updatePremiumPreview();
+})();
+</script>
+    </main>
+
+    <footer class="border-top bg-white py-3" data-testid="app-footer">
+    <div class="container small text-muted d-flex justify-content-between">
+        <span>TalentFarm QA Automation Lab</span>
+        <span>Insurance Order Entry Demo</span>
+    </div>
+</footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

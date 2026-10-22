@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beneficiaries | Insurance Order Entry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f6f8fb; }
+        .page-shell { padding-top: 24px; padding-bottom: 48px; }
+        .tf-card { border: 0; border-radius: 16px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06); }
+        .step-link { text-decoration:none; }
+        .small-label { font-size: .76rem; letter-spacing:.02em; text-transform:uppercase; color:#6c757d; }
+        .status-pill { font-size:.75rem; }
+
+        .tf-brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0d6efd, #084298);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: .02em;
+            box-shadow: 0 6px 14px rgba(13, 110, 253, 0.25);
+        }
+
+        .tf-brand-title {
+            line-height: 1.1;
+        }
+
+        .tf-brand-title .main-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #172033;
+        }
+
+        .tf-brand-title .sub-title {
+            font-size: .74rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body data-testid="app-layout">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" data-testid="main-navigation">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="http://34.180.26.96:8081/dashboard" data-testid="nav-brand">
+            <span class="tf-brand-logo" aria-hidden="true">IO</span>
+            <span class="tf-brand-title">
+                <span class="main-title d-block">Insurance Order Entry Demo Platform</span>
+                <span class="sub-title d-block">QA Automation Training App</span>
+            </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/dashboard" data-testid="nav-dashboard-link">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/applications" data-testid="nav-applications-link">Applications</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/products" data-testid="nav-products-link">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://34.180.26.96:8081/support" data-testid="nav-support-link">Support</a>
+                </li>
+
+                            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <a class="text-decoration-none small" href="http://34.180.26.96:8081/profile" data-testid="nav-profile-link">
+                    Demo Agent Florida
+                </a>
+
+                <form method="POST" action="http://34.180.26.96:8081/logout" class="mb-0">
+                    <input type="hidden" name="_token" value="6yZguEdDqLRZLhKjHBbOu79VtA3yZi2MK7fQf1bR" autocomplete="off">                    <button class="btn btn-outline-secondary btn-sm" data-testid="nav-logout-button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="container page-shell">
+                <div class="d-flex justify-content-between align-items-center mb-3" data-testid="workflow-navigation">
+    <div>
+                    <a href="http://34.180.26.96:8081/applications/100/riders"
+               class="btn btn-outline-secondary"
+               data-testid="workflow-back-button">
+                ← Back to Riders
+            </a>
+        
+                    <a href="http://34.180.26.96:8081/applications/100"
+               class="btn btn-outline-secondary ms-2"
+               data-testid="workflow-summary-button">
+                Application Summary
+            </a>
+            </div>
+</div>
+
+
+<div data-testid="beneficiary-page">
+    <div class="d-flex justify-content-between align-items-start mb-3">
+        <div>
+            <div class="text-muted small">Application #100</div>
+            <h1 class="h3 mb-1">Beneficiaries</h1>
+            <p class="text-muted mb-0">Add or update primary and secondary beneficiaries for the policy.</p>
+        </div>
+        <a href="http://34.180.26.96:8081/applications/100" class="btn btn-outline-secondary btn-sm">
+            Back to Application
+        </a>
+    </div>
+
+    
+    <div
+        class="alert alert-light border"
+        data-testid="beneficiary-allocation-summary"
+        data-primary-total="0"
+        data-secondary-total="0">
+        Primary allocation: 0.00% |
+        Secondary allocation: 0.00%
+            </div>
+
+            <div class="alert alert-info" data-testid="estate-assignment-fallback-message">
+            No beneficiary has been added. Estate assignment will apply by default if no beneficiary is named.
+        </div>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            <strong>Existing Beneficiaries</strong>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table mb-0 align-middle" data-testid="beneficiary-table">
+                    <thead class="table-light">
+                    <tr>
+                        <th>Level</th>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Relationship</th>
+                        <th>Age</th>
+                        <th>Allocation</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th class="text-end">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                                            <tr>
+                            <td colspan="10" class="text-center text-muted py-4" data-testid="beneficiary-empty-state">
+                                No beneficiaries added yet. Estate assignment will apply by default.
+                            </td>
+                        </tr>
+                                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <form method="POST" action="http://34.180.26.96:8081/applications/100/beneficiaries" data-testid="beneficiary-form">
+        <input type="hidden" name="_token" value="6yZguEdDqLRZLhKjHBbOu79VtA3yZi2MK7fQf1bR" autocomplete="off">
+        <input type="hidden" name="irrevocable_confirmation" id="irrevocable_confirmation" value="0">
+
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <strong>Add Beneficiary</strong>
+                            </div>
+
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label">Beneficiary Level *</label>
+                        <select name="beneficiary_level" class="form-select" data-testid="beneficiary-level-select" required>
+                            <option value="">Select</option>
+                            <option value="PRIMARY" >Primary</option>
+                            <option value="SECONDARY" >Secondary</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Beneficiary Type *</label>
+                        <select name="beneficiary_type" class="form-select" data-testid="beneficiary-type-select" required>
+                            <option value="INDIVIDUAL" selected>Individual</option>
+                            <option value="TRUST" >Trust</option>
+                            <option value="ORGANIZATION" >Organization</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Relationship *</label>
+                        <select name="relationship" class="form-select" data-testid="beneficiary-relationship-select" required>
+                            <option value="">Select</option>
+                            <option value="SPOUSE" >Spouse</option>
+                            <option value="CHILD" >Child</option>
+                            <option value="PARENT" >Parent</option>
+                            <option value="SIBLING" >Sibling</option>
+                            <option value="TRUST" >Trust</option>
+                            <option value="ORGANIZATION" >Organization</option>
+                            <option value="OTHER" >Other</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Allocation % *</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            min="0"
+                            max="100"
+                            name="allocation_percentage"
+                            value="100"
+                            class="form-control"
+                            data-testid="beneficiary-allocation-input"
+                            required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Beneficiary Designation *</label>
+                        <select name="is_irrevocable" class="form-select" data-testid="beneficiary-designation-select" required>
+                            <option value="0" selected>Revocable</option>
+                            <option value="1" >Irrevocable</option>
+                        </select>
+                        <div class="form-text">
+                            Irrevocable beneficiaries cannot be changed or removed in this demo without beneficiary consent.
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Phone</label>
+                        <input name="phone" value="" class="form-control" data-testid="beneficiary-phone-input" placeholder="(212) 555-1212">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" value="" class="form-control" data-testid="beneficiary-email-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Country</label>
+                        <input name="country" value="US" class="form-control" data-testid="beneficiary-country-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 beneficiary-type-section" data-beneficiary-section="INDIVIDUAL">
+            <div class="card-header">
+                <strong>Individual Beneficiary Details</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">First Name *</label>
+                        <input name="first_name" value="" class="form-control" data-testid="beneficiary-first-name-input">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Middle Name</label>
+                        <input name="middle_name" value="" class="form-control" data-testid="beneficiary-middle-name-input">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name *</label>
+                        <input name="last_name" value="" class="form-control" data-testid="beneficiary-last-name-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Date of Birth *</label>
+                        <input type="date" name="date_of_birth" value="" class="form-control" data-testid="beneficiary-dob-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Gender</label>
+                        <select name="gender" class="form-select" data-testid="beneficiary-gender-select">
+                            <option value="">Select</option>
+                            <option value="MALE" >Male</option>
+                            <option value="FEMALE" >Female</option>
+                            <option value="NON_BINARY" >Non-binary</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 beneficiary-type-section" data-beneficiary-section="TRUST">
+            <div class="card-header">
+                <strong>Trust Beneficiary Details</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="alert alert-light border small">
+                    Use this section when policy benefits are assigned to a trust. Individual name, date of birth, gender, and minor guardian fields do not apply.
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Trust Name *</label>
+                        <input name="trust_name" value="" class="form-control" data-testid="beneficiary-trust-name-input">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Trustee Name *</label>
+                        <input name="trustee_name" value="" class="form-control" data-testid="beneficiary-trustee-name-input">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label">Trust Date</label>
+                        <input type="date" name="trust_date" value="" class="form-control" data-testid="beneficiary-trust-date-input">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label">Trustee Contact</label>
+                        <input name="trustee_contact" value="" class="form-control" data-testid="beneficiary-trustee-contact-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 beneficiary-type-section" data-beneficiary-section="ORGANIZATION">
+            <div class="card-header">
+                <strong>Organization Beneficiary Details</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="alert alert-light border small">
+                    Use this section when policy benefits are assigned to an organization. Individual name, date of birth, gender, and minor guardian fields do not apply.
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Organization Name *</label>
+                        <input name="organization_name" value="" class="form-control" data-testid="beneficiary-organization-name-input">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Registration Number</label>
+                        <input name="organization_registration_number" value="" class="form-control" data-testid="beneficiary-organization-registration-input">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Organization Contact</label>
+                        <input name="organization_contact" value="" class="form-control" data-testid="beneficiary-organization-contact-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <strong>Address Details</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Address Line 1</label>
+                        <input name="address_line_1" value="" class="form-control" data-testid="beneficiary-address-line-1-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">City</label>
+                        <input name="city" value="" class="form-control" data-testid="beneficiary-city-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">State</label>
+                        <input name="state_province" value="" class="form-control" data-testid="beneficiary-state-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Postal Code</label>
+                        <input name="postal_code" value="" class="form-control" data-testid="beneficiary-postal-code-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4" data-testid="minor-guardian-section">
+            <div class="card-header">
+                <strong>Minor Beneficiary Guardian Details</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label">Guardian Name</label>
+                        <input name="guardian_name" value="" class="form-control" data-testid="beneficiary-guardian-name-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Guardian Relationship</label>
+                        <input name="guardian_relationship" value="" class="form-control" data-testid="beneficiary-guardian-relationship-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Guardian Contact</label>
+                        <input name="guardian_contact" value="" class="form-control" data-testid="beneficiary-guardian-contact-input">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Guardian Address</label>
+                        <input name="guardian_address" value="" class="form-control" data-testid="beneficiary-guardian-address-input">
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input type="checkbox" value="1" name="legal_acknowledgement" class="form-check-input" id="legal_acknowledgement" data-testid="beneficiary-legal-acknowledgement-checkbox" >
+                            <label class="form-check-label" for="legal_acknowledgement">
+                                Legal acknowledgement completed for minor beneficiary
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between pb-4">
+            <a href="http://34.180.26.96:8081/applications/100/riders" class="btn btn-outline-secondary">Back</a>
+            <div>
+                <button class="btn btn-primary" data-testid="beneficiary-save-button">
+                    Save Beneficiary
+                </button>
+                <a href="http://34.180.26.96:8081/applications/100/documents" class="btn btn-outline-primary" data-testid="beneficiary-continue-button">
+                    Continue
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+    </main>
+
+    <footer class="border-top bg-white py-3" data-testid="app-footer">
+    <div class="container small text-muted d-flex justify-content-between">
+        <span>TalentFarm QA Automation Lab</span>
+        <span>Insurance Order Entry Demo</span>
+    </div>
+</footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('[data-testid="beneficiary-form"]');
+    const typeSelect = document.querySelector('[data-testid="beneficiary-type-select"]');
+    const relationshipSelect = document.querySelector('[data-testid="beneficiary-relationship-select"]');
+    const levelSelect = document.querySelector('[data-testid="beneficiary-level-select"]');
+    const allocationInput = document.querySelector('[data-testid="beneficiary-allocation-input"]');
+    const summary = document.querySelector('[data-testid="beneficiary-allocation-summary"]');
+    const designationSelect = document.querySelector('[data-testid="beneficiary-designation-select"]');
+    const irrevocableConfirmation = document.getElementById('irrevocable_confirmation');
+    const sections = document.querySelectorAll('[data-beneficiary-section]');
+    const guardianSection = document.querySelector('[data-testid="minor-guardian-section"]');
+
+    if (!form) {
+        return;
+    }
+
+    function setDisabled(container, disabled) {
+        if (!container) {
+            return;
+        }
+
+        container.querySelectorAll('input, select, textarea').forEach(function (field) {
+            field.disabled = disabled;
+        });
+    }
+
+    function updateTypeSections() {
+        const type = typeSelect ? typeSelect.value : 'INDIVIDUAL';
+
+        sections.forEach(function (section) {
+            const isActive = section.dataset.beneficiarySection === type;
+            section.classList.toggle('d-none', !isActive);
+            setDisabled(section, !isActive);
+        });
+
+        if (guardianSection) {
+            const showGuardian = type === 'INDIVIDUAL';
+            guardianSection.classList.toggle('d-none', !showGuardian);
+            setDisabled(guardianSection, !showGuardian);
+        }
+
+        if (relationshipSelect) {
+            if (type === 'TRUST') {
+                relationshipSelect.value = 'TRUST';
+            } else if (type === 'ORGANIZATION') {
+                relationshipSelect.value = 'ORGANIZATION';
+            }
+        }
+    }
+
+    function currentTotalForLevel(level) {
+        if (!summary) {
+            return 0;
+        }
+
+        if (level === 'SECONDARY') {
+            return parseFloat(summary.dataset.secondaryTotal || '0') || 0;
+        }
+
+        return parseFloat(summary.dataset.primaryTotal || '0') || 0;
+    }
+
+    typeSelect?.addEventListener('change', updateTypeSections);
+    updateTypeSections();
+
+    form.addEventListener('submit', function (event) {
+        const level = levelSelect ? levelSelect.value : 'PRIMARY';
+        const allocation = allocationInput ? parseFloat(allocationInput.value || '0') : 0;
+        const total = currentTotalForLevel(level) + allocation;
+
+        if (total > 100) {
+            event.preventDefault();
+            alert('Total ' + level + ' beneficiary allocation cannot exceed 100%. Current total would be ' + total.toFixed(2) + '%.');
+            if (allocationInput) {
+                allocationInput.focus();
+            }
+            return;
+        }
+
+        if (designationSelect && designationSelect.value === '1') {
+            const accepted = confirm(
+                'Legal disclaimer: You are designating this beneficiary as irrevocable. ' +
+                'This designation cannot be changed or removed without the beneficiary consent once saved. ' +
+                'Select OK to confirm this designation.'
+            );
+
+            if (!accepted) {
+                event.preventDefault();
+                designationSelect.focus();
+                return;
+            }
+
+            if (irrevocableConfirmation) {
+                irrevocableConfirmation.value = '1';
+            }
+        }
+    });
+});
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
