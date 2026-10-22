@@ -12,54 +12,44 @@
 # Error details
 
 ```
-Error: Locked agent got past the login page
+Error: Locked agent saw "Please review the following:
+Invalid credentials." instead of a locked account message (DEF-AUTH-001)
 
-expect(page).toHaveURL(expected) failed
+expect(received).toMatch(expected)
 
-Expected pattern: /login/
-Received string:  "http://34.14.182.252:8081/change-password"
-Timeout: 10000ms
-
-Call log:
-  - Locked agent got past the login page with timeout 10000ms
-    23 × locator resolved to <html lang="en">…</html>
-       - unexpected value "http://34.14.182.252:8081/change-password"
-
+Expected pattern: /lock/i
+Received string:  "Please review the following:
+Invalid credentials."
 ```
 
+# Page snapshot
+
 ```yaml
-- navigation:
-  - link "Insurance Order Entry Demo Platform QA Automation Training App":
-    - /url: http://34.14.182.252:8081/dashboard
-  - list:
-    - listitem:
-      - link "Dashboard":
-        - /url: http://34.14.182.252:8081/dashboard
-    - listitem:
-      - link "Applications":
-        - /url: http://34.14.182.252:8081/applications
-    - listitem:
-      - link "Products":
-        - /url: http://34.14.182.252:8081/products
-    - listitem:
-      - link "Support":
-        - /url: http://34.14.182.252:8081/support
-  - link "Locked Agent":
-    - /url: http://34.14.182.252:8081/profile
-  - button "Logout"
-- main:
-  - alert: Please change your password before continuing.
-  - heading "Change Password" [level=1]
-  - paragraph: Your password must be changed before you continue.
-  - text: Please change your password before continuing. Current Password
-  - textbox "Current Password"
-  - text: New Password
-  - textbox "New Password"
-  - text: Minimum 12 characters with uppercase, lowercase, digit, and special character. Confirm New Password
-  - textbox "Confirm New Password"
-  - button "Change Password"
-  - button "Sign out"
-- contentinfo: TalentFarm QA Automation Lab Insurance Order Entry Demo
+- main [ref=f1e2]:
+  - generic [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - generic [aria-hidden] [ref=f1e6]: IO
+      - generic [ref=f1e7]:
+        - heading "Insurance Order Entry Demo Platform" [level=1] [ref=f1e8]
+        - paragraph [ref=f1e9]: QA Automation Training App
+    - alert [ref=f1e10]:
+      - generic [ref=f1e11]: "Please review the following:"
+      - list [ref=f1e12]:
+        - listitem [ref=f1e13]: Invalid credentials.
+    - generic [ref=f1e14]:
+      - generic [ref=f1e15]:
+        - generic [ref=f1e16]: Email
+        - textbox "Email" [active] [ref=f1e17]: agent.locked@insurance.test
+      - generic [ref=f1e18]:
+        - generic [ref=f1e19]: Password
+        - textbox "Password" [ref=f1e20]
+      - generic [ref=f1e21]:
+        - button "Login" [ref=f1e22] [cursor=pointer]
+        - link "Forgot password?" [ref=f1e23] [cursor=pointer]:
+          - /url: http://34.14.182.252:8081/forgot-password
+    - link "New agent? Register here" [ref=f1e25] [cursor=pointer]:
+      - /url: http://34.14.182.252:8081/register
+    - generic [ref=f1e26]: "Demo user: agent.valid@insurance.test / Password@123"
 ```
 
 # Test source
@@ -104,11 +94,11 @@ Call log:
   37 |     const login = new LoginPage(page);
   38 |     await login.goto();
   39 |     await login.login(users.locked.email, users.locked.password);
-> 40 |     await expect(page, 'Locked agent got past the login page').toHaveURL(/login/);
-     |                                                                ^ Error: Locked agent got past the login page
+  40 |     await expect(page, 'Locked agent got past the login page').toHaveURL(/login/);
   41 |     const text = await login.errorText();
   42 |     expect(text, `Locked agent saw "${text}" instead of a locked account message (DEF-AUTH-001)`)
-  43 |       .toMatch(/lock/i);
+> 43 |       .toMatch(/lock/i);
+     |        ^ Error: Locked agent saw "Please review the following:
   44 |   });
   45 | 
   46 |   test('TC-AUTH-07 MFA agent must enter OTP @regression', async ({ page }) => {
