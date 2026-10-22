@@ -1,0 +1,3599 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\insurance-order-entry-playwright-automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--retries=0"
+    ],
+    "configFile": "C:\\insurance-order-entry-playwright-automation\\playwright.config.js",
+    "rootDir": "C:/insurance-order-entry-playwright-automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/insurance-order-entry-playwright-automation/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/insurance-order-entry-playwright-automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\insurance-order-entry-playwright-automation\\tests",
+        "snapshotDir": "C:\\insurance-order-entry-playwright-automation\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://34.14.182.252:8081",
+          "headless": true,
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/html-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api\\http.spec.js",
+      "file": "api/http.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "HTTP layer @api",
+          "file": "api/http.spec.js",
+          "line": 13,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-API-01 health check responds @smoke",
+              "ok": false,
+              "tags": [
+                "api",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 35154,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at C:\\insurance-order-entry-playwright-automation\\tests\\api\\http.spec.js:16:26",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\api\\http.spec.js",
+                          "column": 26,
+                          "line": 16
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m   test(\u001b[32m'TC-API-01 health check responds @smoke'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\n \u001b[90m 15 |\u001b[39m     \u001b[36mconst\u001b[39m res \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m`${BASE()}/up`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m     expect(res\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m\n \u001b[90m 19 |\u001b[39m   test(\u001b[32m'TC-API-02 protected routes redirect without session @smoke'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\api\\http.spec.js",
+                            "column": 26,
+                            "line": 16
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n\u001b[0m \u001b[90m 14 |\u001b[39m   test(\u001b[32m'TC-API-01 health check responds @smoke'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\n \u001b[90m 15 |\u001b[39m     \u001b[36mconst\u001b[39m res \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m`${BASE()}/up`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m     expect(res\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m\n \u001b[90m 19 |\u001b[39m   test(\u001b[32m'TC-API-02 protected routes redirect without session @smoke'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\api\\http.spec.js:16:26\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:00:46.182Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\api-http-HTTP-layer-api-TC-2957e-health-check-responds-smoke-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\api-http-HTTP-layer-api-TC-2957e-health-check-responds-smoke-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\api\\http.spec.js",
+                        "column": 26,
+                        "line": 16
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1ee2e4dcc2c2fa1e15a1-4d4a2c95a7cab35c1804",
+              "file": "api/http.spec.js",
+              "line": 14,
+              "column": 3
+            },
+            {
+              "title": "TC-API-02 protected routes redirect without session @smoke",
+              "ok": true,
+              "tags": [
+                "api",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3438,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:01:22.263Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ee2e4dcc2c2fa1e15a1-df141be975c95d8ffbc1",
+              "file": "api/http.spec.js",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "TC-API-03 invalid login creates no session @regression",
+              "ok": true,
+              "tags": [
+                "api",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9714,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:01:25.766Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ee2e4dcc2c2fa1e15a1-ca3b7f3d55e3ce0a4a19",
+              "file": "api/http.spec.js",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "TC-API-04 post without CSRF token rejected @regression",
+              "ok": true,
+              "tags": [
+                "api",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20415,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:01:35.510Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ee2e4dcc2c2fa1e15a1-3627e2ec81e2bf0e764a",
+              "file": "api/http.spec.js",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "TC-API-05 server rejects future DOB sent directly @regression",
+              "ok": true,
+              "tags": [
+                "api",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8246,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:05.111Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ee2e4dcc2c2fa1e15a1-0166490addc347c9669f",
+              "file": "api/http.spec.js",
+              "line": 45,
+              "column": 3
+            },
+            {
+              "title": "TC-API-06 validate endpoint returns errors for empty draft @regression",
+              "ok": true,
+              "tags": [
+                "api",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8142,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:13.386Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ee2e4dcc2c2fa1e15a1-733ffdaacef8527e6f0b",
+              "file": "api/http.spec.js",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "TC-API-07 submit endpoint refuses incomplete draft @regression",
+              "ok": true,
+              "tags": [
+                "api",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6872,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:21.550Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ee2e4dcc2c2fa1e15a1-4ef4284003caa8a592b1",
+              "file": "api/http.spec.js",
+              "line": 69,
+              "column": 3
+            },
+            {
+              "title": "TC-API-08 another agent application not returned @regression",
+              "ok": true,
+              "tags": [
+                "api",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5433,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:28.443Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ee2e4dcc2c2fa1e15a1-0500104a6af6a982b969",
+              "file": "api/http.spec.js",
+              "line": 77,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "auth\\login.spec.js",
+      "file": "auth/login.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Authentication @auth",
+          "file": "auth/login.spec.js",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-AUTH-01 valid agent signs in @smoke",
+              "ok": true,
+              "tags": [
+                "auth",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2939,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:33.910Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "626483fc77c4bb72c38c-0da74d882f011c81bf72",
+              "file": "auth/login.spec.js",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-02 wrong password shows an error @regression",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2626,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:36.874Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "626483fc77c4bb72c38c-95a7e7fa9a853ed176b5",
+              "file": "auth/login.spec.js",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-03 dashboard blocked without login and after logout @smoke",
+              "ok": true,
+              "tags": [
+                "auth",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4930,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:39.523Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "626483fc77c4bb72c38c-8f4d601c2856cfb7bc89",
+              "file": "auth/login.spec.js",
+              "line": 25,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-04 locked agent sees a locked message @regression",
+              "ok": false,
+              "tags": [
+                "auth",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13118,
+                      "error": {
+                        "message": "Error: Locked agent got past the login page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/login/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/change-password\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Locked agent got past the login page with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/change-password\"\u001b[22m\n",
+                        "stack": "Error: Locked agent got past the login page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/login/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/change-password\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Locked agent got past the login page with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/change-password\"\u001b[22m\n\n    at C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js:40:64",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js",
+                          "column": 64,
+                          "line": 40
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m login\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[36mawait\u001b[39m login\u001b[33m.\u001b[39mlogin(users\u001b[33m.\u001b[39mlocked\u001b[33m.\u001b[39memail\u001b[33m,\u001b[39m users\u001b[33m.\u001b[39mlocked\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m'Locked agent got past the login page'\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/login/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m     \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m login\u001b[33m.\u001b[39merrorText()\u001b[33m;\u001b[39m\n \u001b[90m 42 |\u001b[39m     expect(text\u001b[33m,\u001b[39m \u001b[32m`Locked agent saw \"${text}\" instead of a locked account message (DEF-AUTH-001)`\u001b[39m)\n \u001b[90m 43 |\u001b[39m       \u001b[33m.\u001b[39mtoMatch(\u001b[35m/lock/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js",
+                            "column": 64,
+                            "line": 40
+                          },
+                          "message": "Error: Locked agent got past the login page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/login/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/change-password\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Locked agent got past the login page with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/change-password\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m login\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[36mawait\u001b[39m login\u001b[33m.\u001b[39mlogin(users\u001b[33m.\u001b[39mlocked\u001b[33m.\u001b[39memail\u001b[33m,\u001b[39m users\u001b[33m.\u001b[39mlocked\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m'Locked agent got past the login page'\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/login/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m     \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m login\u001b[33m.\u001b[39merrorText()\u001b[33m;\u001b[39m\n \u001b[90m 42 |\u001b[39m     expect(text\u001b[33m,\u001b[39m \u001b[32m`Locked agent saw \"${text}\" instead of a locked account message (DEF-AUTH-001)`\u001b[39m)\n \u001b[90m 43 |\u001b[39m       \u001b[33m.\u001b[39mtoMatch(\u001b[35m/lock/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js:40:64\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:44.475Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-login-Authentication--5cbbf-a-locked-message-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-login-Authentication--5cbbf-a-locked-message-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-login-Authentication--5cbbf-a-locked-message-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-login-Authentication--5cbbf-a-locked-message-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js",
+                        "column": 64,
+                        "line": 40
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "626483fc77c4bb72c38c-70289848829f7f819e28",
+              "file": "auth/login.spec.js",
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-07 MFA agent must enter OTP @regression",
+              "ok": false,
+              "tags": [
+                "auth",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13278,
+                      "error": {
+                        "message": "Error: MFA agent signed in with no OTP step and landed on http://34.14.182.252:8081/applications/113/client (MFA not enforced)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - MFA agent signed in with no OTP step and landed on http://34.14.182.252:8081/applications/113/client (MFA not enforced) locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first()\u001b[22m\n",
+                        "stack": "Error: MFA agent signed in with no OTP step and landed on http://34.14.182.252:8081/applications/113/client (MFA not enforced)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - MFA agent signed in with no OTP step and landed on http://34.14.182.252:8081/applications/113/client (MFA not enforced) locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first()\u001b[22m\n\n    at C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js:54:7",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js",
+                          "column": 7,
+                          "line": 54
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 52 |\u001b[39m       otpInput\u001b[33m,\u001b[39m\n \u001b[90m 53 |\u001b[39m       \u001b[32m`MFA agent signed in with no OTP step and landed on ${page.url()} (MFA not enforced)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 54 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m     \u001b[36mawait\u001b[39m otpInput\u001b[33m.\u001b[39mfill(\u001b[32m'000000'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'form button[type=\"submit\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js",
+                            "column": 7,
+                            "line": 54
+                          },
+                          "message": "Error: MFA agent signed in with no OTP step and landed on http://34.14.182.252:8081/applications/113/client (MFA not enforced)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - MFA agent signed in with no OTP step and landed on http://34.14.182.252:8081/applications/113/client (MFA not enforced) locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('input[name*=\"otp\" i], input[name*=\"code\" i], input[autocomplete=\"one-time-code\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 52 |\u001b[39m       otpInput\u001b[33m,\u001b[39m\n \u001b[90m 53 |\u001b[39m       \u001b[32m`MFA agent signed in with no OTP step and landed on ${page.url()} (MFA not enforced)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 54 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m     \u001b[36mawait\u001b[39m otpInput\u001b[33m.\u001b[39mfill(\u001b[32m'000000'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'form button[type=\"submit\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js:54:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:02:59.382Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-login-Authentication--1b1ce-t-must-enter-OTP-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-login-Authentication--1b1ce-t-must-enter-OTP-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-login-Authentication--1b1ce-t-must-enter-OTP-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-login-Authentication--1b1ce-t-must-enter-OTP-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\login.spec.js",
+                        "column": 7,
+                        "line": 54
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "626483fc77c4bb72c38c-916954bf2a382385a6a4",
+              "file": "auth/login.spec.js",
+              "line": 46,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "auth\\password.spec.js",
+      "file": "auth/password.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Password rules @auth",
+          "file": "auth/password.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-AUTH-05 weak password rejected at registration @regression",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2795,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:03:13.948Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29f7e4449eae00ea244e-1c04ad15be94f99c5412",
+              "file": "auth/password.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-06 new password cannot match current password @regression",
+              "ok": false,
+              "tags": [
+                "auth",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16243,
+                      "error": {
+                        "message": "Error: Changing to the same password was accepted (DEF-AUTH-006)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.alert-danger, .invalid-feedback').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Changing to the same password was accepted (DEF-AUTH-006) locator('.alert-danger, .invalid-feedback').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.alert-danger, .invalid-feedback').first()\u001b[22m\n",
+                        "stack": "Error: Changing to the same password was accepted (DEF-AUTH-006)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.alert-danger, .invalid-feedback').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Changing to the same password was accepted (DEF-AUTH-006) locator('.alert-danger, .invalid-feedback').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.alert-danger, .invalid-feedback').first()\u001b[22m\n\n    at C:\\insurance-order-entry-playwright-automation\\tests\\auth\\password.spec.js:34:68",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\password.spec.js",
+                          "column": 68,
+                          "line": 34
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState()\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.alert-danger, .invalid-feedback'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m       \u001b[32m'Changing to the same password was accepted (DEF-AUTH-006)'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\password.spec.js",
+                            "column": 68,
+                            "line": 34
+                          },
+                          "message": "Error: Changing to the same password was accepted (DEF-AUTH-006)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.alert-danger, .invalid-feedback').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Changing to the same password was accepted (DEF-AUTH-006) locator('.alert-danger, .invalid-feedback').first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.alert-danger, .invalid-feedback').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState()\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.alert-danger, .invalid-feedback'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m       \u001b[32m'Changing to the same password was accepted (DEF-AUTH-006)'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\auth\\password.spec.js:34:68\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:03:16.947Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-password-Password-rul-b71f9-current-password-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-password-Password-rul-b71f9-current-password-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-password-Password-rul-b71f9-current-password-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\auth-password-Password-rul-b71f9-current-password-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\auth\\password.spec.js",
+                        "column": 68,
+                        "line": 34
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "29f7e4449eae00ea244e-d73b138faa1e46eef2cc",
+              "file": "auth/password.spec.js",
+              "line": 25,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "beneficiaries\\beneficiaries.spec.js",
+      "file": "beneficiaries/beneficiaries.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Beneficiaries @beneficiary",
+          "file": "beneficiaries/beneficiaries.spec.js",
+          "line": 12,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-BEN-01 valid primary beneficiary added @smoke",
+              "ok": true,
+              "tags": [
+                "beneficiary",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8600,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:03:34.346Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29fc69f43817cbc6b9e2-a2043e8c2fd778a52ff8",
+              "file": "beneficiaries/beneficiaries.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "TC-BEN-02 primary below 100 percent blocks progression @regression",
+              "ok": false,
+              "tags": [
+                "beneficiary",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 18593,
+                      "error": {
+                        "message": "Error: Wizard moved on with only 60% allocated (DEF-BEN-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/beneficiaries/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/246/documents\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Wizard moved on with only 60% allocated (DEF-BEN-001) with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/applications/246/documents\"\u001b[22m\n",
+                        "stack": "Error: Wizard moved on with only 60% allocated (DEF-BEN-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/beneficiaries/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/246/documents\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Wizard moved on with only 60% allocated (DEF-BEN-001) with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/applications/246/documents\"\u001b[22m\n\n    at C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js:24:81",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js",
+                          "column": 81,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39maddBeneficiary(data\u001b[33m.\u001b[39mbeneficiary({ allocation\u001b[33m:\u001b[39m \u001b[35m60\u001b[39m }))\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39mclickContinue()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m'Wizard moved on with only 60% allocated (DEF-BEN-001)'\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/beneficiaries/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m   test(\u001b[32m'TC-BEN-03 primary above 100 percent blocked @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ agentPage\u001b[33m:\u001b[39m page\u001b[33m,\u001b[39m draftId }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js",
+                            "column": 81,
+                            "line": 24
+                          },
+                          "message": "Error: Wizard moved on with only 60% allocated (DEF-BEN-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/beneficiaries/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/246/documents\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Wizard moved on with only 60% allocated (DEF-BEN-001) with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/applications/246/documents\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39maddBeneficiary(data\u001b[33m.\u001b[39mbeneficiary({ allocation\u001b[33m:\u001b[39m \u001b[35m60\u001b[39m }))\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39mclickContinue()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m'Wizard moved on with only 60% allocated (DEF-BEN-001)'\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/beneficiaries/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m   test(\u001b[32m'TC-BEN-03 primary above 100 percent blocked @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ agentPage\u001b[33m:\u001b[39m page\u001b[33m,\u001b[39m draftId }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js:24:81\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:03:43.257Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\beneficiaries-beneficiarie-36bfa-ocks-progression-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\beneficiaries-beneficiarie-36bfa-ocks-progression-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\beneficiaries-beneficiarie-36bfa-ocks-progression-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\beneficiaries-beneficiarie-36bfa-ocks-progression-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js",
+                        "column": 81,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "29fc69f43817cbc6b9e2-8dccc801b4ded902be58",
+              "file": "beneficiaries/beneficiaries.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "TC-BEN-03 primary above 100 percent blocked @regression",
+              "ok": true,
+              "tags": [
+                "beneficiary",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17584,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:04:03.196Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29fc69f43817cbc6b9e2-bc65fdf7542cd7800300",
+              "file": "beneficiaries/beneficiaries.spec.js",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "TC-BEN-04 minor beneficiary needs guardian @regression",
+              "ok": true,
+              "tags": [
+                "beneficiary",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6893,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:04:20.994Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29fc69f43817cbc6b9e2-09cfe5f8e3be679b499a",
+              "file": "beneficiaries/beneficiaries.spec.js",
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "TC-BEN-05 beneficiary type shows matching fields @regression",
+              "ok": true,
+              "tags": [
+                "beneficiary",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5703,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:04:27.912Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29fc69f43817cbc6b9e2-464d0ac362fc4535a87a",
+              "file": "beneficiaries/beneficiaries.spec.js",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "TC-BEN-06 trust needs trust and trustee names @regression",
+              "ok": true,
+              "tags": [
+                "beneficiary",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6684,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:04:33.638Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "29fc69f43817cbc6b9e2-98c08c8e4dc6a3100de9",
+              "file": "beneficiaries/beneficiaries.spec.js",
+              "line": 53,
+              "column": 3
+            },
+            {
+              "title": "TC-BEN-07 duplicate beneficiary blocked @regression",
+              "ok": false,
+              "tags": [
+                "beneficiary",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8968,
+                      "error": {
+                        "message": "Error: The same beneficiary was saved twice\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m",
+                        "stack": "Error: The same beneficiary was saved twice\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n    at C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js:64:80",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js",
+                          "column": 80,
+                          "line": 64
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 62 |\u001b[39m     \u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39maddBeneficiary(same)\u001b[33m;\u001b[39m\n \u001b[90m 63 |\u001b[39m     \u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39maddBeneficiary(same)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 64 |\u001b[39m     expect(\u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39mbeneficiaryCount()\u001b[33m,\u001b[39m \u001b[32m'The same beneficiary was saved twice'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 65 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 67 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js",
+                            "column": 80,
+                            "line": 64
+                          },
+                          "message": "Error: The same beneficiary was saved twice\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n\u001b[0m \u001b[90m 62 |\u001b[39m     \u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39maddBeneficiary(same)\u001b[33m;\u001b[39m\n \u001b[90m 63 |\u001b[39m     \u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39maddBeneficiary(same)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 64 |\u001b[39m     expect(\u001b[36mawait\u001b[39m b\u001b[33m.\u001b[39mbeneficiaryCount()\u001b[33m,\u001b[39m \u001b[32m'The same beneficiary was saved twice'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 65 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 67 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js:64:80\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:04:40.345Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\beneficiaries-beneficiarie-fd10a-eficiary-blocked-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\beneficiaries-beneficiarie-fd10a-eficiary-blocked-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\beneficiaries-beneficiarie-fd10a-eficiary-blocked-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\beneficiaries-beneficiarie-fd10a-eficiary-blocked-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\beneficiaries\\beneficiaries.spec.js",
+                        "column": 80,
+                        "line": 64
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "29fc69f43817cbc6b9e2-b855d7ef36c20d302d1c",
+              "file": "beneficiaries/beneficiaries.spec.js",
+              "line": 59,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "client-information\\address-contact.spec.js",
+      "file": "client-information/address-contact.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Address and contact @client",
+          "file": "client-information/address-contact.spec.js",
+          "line": 19,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-ADDR-01 same-as-residential copies all fields @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11142,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:04:50.793Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3bf7c8d8e5638153703c-69aa0c593a6c6d4e2e00",
+              "file": "client-information/address-contact.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "TC-ADDR-02 ZIP with letters rejected @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11049,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:05:02.130Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3bf7c8d8e5638153703c-d820494adc4bc6327083",
+              "file": "client-information/address-contact.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "TC-ADDR-03 state longer than 2 characters rejected @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10527,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:05:13.210Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3bf7c8d8e5638153703c-93f33558ef62d7d21d5e",
+              "file": "client-information/address-contact.spec.js",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "TC-ADDR-04 invalid email rejected @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10481,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:05:23.780Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3bf7c8d8e5638153703c-1735b670c8a877f949ff",
+              "file": "client-information/address-contact.spec.js",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "TC-ADDR-05 short phone number rejected @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11169,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:05:34.286Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3bf7c8d8e5638153703c-f7ae324005455edca757",
+              "file": "client-information/address-contact.spec.js",
+              "line": 52,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "client-information\\client.spec.js",
+      "file": "client-information/client.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Client information @client",
+          "file": "client-information/client.spec.js",
+          "line": 18,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CLI-01 valid client details save @smoke",
+              "ok": true,
+              "tags": [
+                "client",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8115,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:05:45.510Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7fe8af87423c7d98cd5c-cd9b020c21a7ab703ee6",
+              "file": "client-information/client.spec.js",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "TC-CLI-02 mandatory client fields enforced @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16890,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:05:53.646Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7fe8af87423c7d98cd5c-3fdeb322d75b2bb0ac55",
+              "file": "client-information/client.spec.js",
+              "line": 24,
+              "column": 3
+            },
+            {
+              "title": "TC-CLI-03 client under 18 rejected @regression",
+              "ok": false,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8798,
+                      "error": {
+                        "message": "Error: A 17 year old client was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/259/address-contact\"\u001b[39m",
+                        "stack": "Error: A 17 year old client was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/259/address-contact\"\u001b[39m\n    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\n    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js:34:11",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                          "column": 31,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                            "column": 31,
+                            "line": 10
+                          },
+                          "message": "Error: A 17 year old client was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/259/address-contact\"\u001b[39m\n\n\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\u001b[22m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js:34:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:06:10.567Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--050f4-nder-18-rejected-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--050f4-nder-18-rejected-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--050f4-nder-18-rejected-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--050f4-nder-18-rejected-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                        "column": 31,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7fe8af87423c7d98cd5c-6a770bd8fc01e2aede5d",
+              "file": "client-information/client.spec.js",
+              "line": 32,
+              "column": 3
+            },
+            {
+              "title": "TC-CLI-04 client exactly 18 accepted @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7994,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:06:21.178Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7fe8af87423c7d98cd5c-519591f6211edd0862f8",
+              "file": "client-information/client.spec.js",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "TC-CLI-05 client over 65 rejected @regression",
+              "ok": false,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7078,
+                      "error": {
+                        "message": "Error: A 66 year old client was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/261/address-contact\"\u001b[39m",
+                        "stack": "Error: A 66 year old client was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/261/address-contact\"\u001b[39m\n    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\n    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js:44:11",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                          "column": 31,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                            "column": 31,
+                            "line": 10
+                          },
+                          "message": "Error: A 66 year old client was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/261/address-contact\"\u001b[39m\n\n\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\u001b[22m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js:44:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:06:29.594Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--543a1-over-65-rejected-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--543a1-over-65-rejected-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--543a1-over-65-rejected-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--543a1-over-65-rejected-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                        "column": 31,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7fe8af87423c7d98cd5c-3c34216b3c8e9384972f",
+              "file": "client-information/client.spec.js",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "TC-CLI-06 future DOB rejected @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7058,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:06:38.060Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7fe8af87423c7d98cd5c-eb906499ce4e54464bea",
+              "file": "client-information/client.spec.js",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "TC-CLI-07 age correct when birthday is today @regression",
+              "ok": false,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7654,
+                      "error": {
+                        "message": "Error: Age is wrong for a client whose birthday is today (DEF-CLI-003)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m30\u001b[39m\nReceived: \u001b[31m31\u001b[39m",
+                        "stack": "Error: Age is wrong for a client whose birthday is today (DEF-CLI-003)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m30\u001b[39m\nReceived: \u001b[31m31\u001b[39m\n    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js:56:104",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js",
+                          "column": 104,
+                          "line": 56
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 54 |\u001b[39m     \u001b[36mconst\u001b[39m review \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mReviewPage\u001b[39m(page)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m review\u001b[33m.\u001b[39mgoto(draftId)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m     expect(\u001b[36mawait\u001b[39m review\u001b[33m.\u001b[39mageValue()\u001b[33m,\u001b[39m \u001b[32m'Age is wrong for a client whose birthday is today (DEF-CLI-003)'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m30\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 58 |\u001b[39m\n \u001b[90m 59 |\u001b[39m   test(\u001b[32m'TC-CLI-08 name with digits or symbols rejected @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ agentPage\u001b[33m:\u001b[39m page\u001b[33m,\u001b[39m draftId }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js",
+                            "column": 104,
+                            "line": 56
+                          },
+                          "message": "Error: Age is wrong for a client whose birthday is today (DEF-CLI-003)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m30\u001b[39m\nReceived: \u001b[31m31\u001b[39m\n\n\u001b[0m \u001b[90m 54 |\u001b[39m     \u001b[36mconst\u001b[39m review \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mReviewPage\u001b[39m(page)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m review\u001b[33m.\u001b[39mgoto(draftId)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m     expect(\u001b[36mawait\u001b[39m review\u001b[33m.\u001b[39mageValue()\u001b[33m,\u001b[39m \u001b[32m'Age is wrong for a client whose birthday is today (DEF-CLI-003)'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m30\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 58 |\u001b[39m\n \u001b[90m 59 |\u001b[39m   test(\u001b[32m'TC-CLI-08 name with digits or symbols rejected @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ agentPage\u001b[33m:\u001b[39m page\u001b[33m,\u001b[39m draftId }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js:56:104\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:06:45.304Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--f28ee-irthday-is-today-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--f28ee-irthday-is-today-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--f28ee-irthday-is-today-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--f28ee-irthday-is-today-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js",
+                        "column": 104,
+                        "line": 56
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7fe8af87423c7d98cd5c-a181444367bb34b57f8d",
+              "file": "client-information/client.spec.js",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "TC-CLI-08 name with digits or symbols rejected @regression",
+              "ok": false,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8094,
+                      "error": {
+                        "message": "Error: First name J0hn$ was accepted (DEF-CLI-004)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/264/address-contact\"\u001b[39m",
+                        "stack": "Error: First name J0hn$ was accepted (DEF-CLI-004)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/264/address-contact\"\u001b[39m\n    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\n    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js:61:11",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                          "column": 31,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                            "column": 31,
+                            "line": 10
+                          },
+                          "message": "Error: First name J0hn$ was accepted (DEF-CLI-004)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/\\/client/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/264/address-contact\"\u001b[39m\n\n\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\u001b[22m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\client.spec.js:61:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:06:54.261Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--0a09a-symbols-rejected-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--0a09a-symbols-rejected-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--0a09a-symbols-rejected-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-client--0a09a-symbols-rejected-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                        "column": 31,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7fe8af87423c7d98cd5c-633df5d099bd607ee683",
+              "file": "client-information/client.spec.js",
+              "line": 59,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "client-information\\kyc-financial.spec.js",
+      "file": "client-information/kyc-financial.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "KYC, financial and compliance @client",
+          "file": "client-information/kyc-financial.spec.js",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-KYC-01 valid KYC details save @smoke",
+              "ok": true,
+              "tags": [
+                "client",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12685,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:07:03.954Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3dc1441c71f0b69dec46-14d1aee2a59e20aa15c0",
+              "file": "client-information/kyc-financial.spec.js",
+              "line": 21,
+              "column": 3
+            },
+            {
+              "title": "TC-KYC-02 SSN masked after entry @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12268,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:07:16.977Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3dc1441c71f0b69dec46-f3d8373299c81f3fc9da",
+              "file": "client-information/kyc-financial.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "TC-KYC-03 short SSN rejected @regression",
+              "ok": false,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11344,
+                      "error": {
+                        "message": "Error: SSN 12345 was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/kyc-financial/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/267/product\"\u001b[39m",
+                        "stack": "Error: SSN 12345 was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/kyc-financial/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/267/product\"\u001b[39m\n    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\n    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js:40:11",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                          "column": 31,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                            "column": 31,
+                            "line": 10
+                          },
+                          "message": "Error: SSN 12345 was accepted\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/kyc-financial/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/267/product\"\u001b[39m\n\n\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\u001b[22m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js:40:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:07:29.270Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-9db7f-ort-SSN-rejected-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-9db7f-ort-SSN-rejected-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-9db7f-ort-SSN-rejected-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-9db7f-ort-SSN-rejected-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                        "column": 31,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3dc1441c71f0b69dec46-ce3e1a28b9d701c7ad40",
+              "file": "client-information/kyc-financial.spec.js",
+              "line": 38,
+              "column": 3
+            },
+            {
+              "title": "TC-KYC-04 PEP Yes requires details @regression",
+              "ok": false,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11668,
+                      "error": {
+                        "message": "Error: PEP Yes saved with no details\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/kyc-financial/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/268/product\"\u001b[39m",
+                        "stack": "Error: PEP Yes saved with no details\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/kyc-financial/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/268/product\"\u001b[39m\n    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\n    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js:45:11",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                          "column": 31,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                            "column": 31,
+                            "line": 10
+                          },
+                          "message": "Error: PEP Yes saved with no details\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/kyc-financial/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/268/product\"\u001b[39m\n\n\u001b[90m   at \u001b[39m..\\utils\\assertions.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[90m */\u001b[39m\n \u001b[90m  9 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m expectStepRejected(page\u001b[33m,\u001b[39m alert\u001b[33m,\u001b[39m stepPattern\u001b[33m,\u001b[39m message) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   expect(page\u001b[33m.\u001b[39murl()\u001b[33m,\u001b[39m message)\u001b[33m.\u001b[39mtoMatch(stepPattern)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m }\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m module\u001b[33m.\u001b[39mexports \u001b[33m=\u001b[39m { expectStepRejected }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at expectStepRejected (C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js:10:31)\u001b[22m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js:45:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:07:42.283Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-59572-requires-details-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-59572-requires-details-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-59572-requires-details-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-59572-requires-details-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\utils\\assertions.js",
+                        "column": 31,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3dc1441c71f0b69dec46-df051d495c6ebe4612ae",
+              "file": "client-information/kyc-financial.spec.js",
+              "line": 43,
+              "column": 3
+            },
+            {
+              "title": "TC-KYC-05 declaration required @regression",
+              "ok": true,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19869,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:07:55.621Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3dc1441c71f0b69dec46-8427e1a23b464be742b0",
+              "file": "client-information/kyc-financial.spec.js",
+              "line": 48,
+              "column": 3
+            },
+            {
+              "title": "TC-KYC-06 unaffordable premium is blocked @regression",
+              "ok": false,
+              "tags": [
+                "client",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 15730,
+                      "error": {
+                        "message": "Error: Annual premium 30,500 on income 20,000 was not flagged (DEF-FIN-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/afford|income/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m",
+                        "stack": "Error: Annual premium 30,500 on income 20,000 was not flagged (DEF-FIN-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/afford|income/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js:71:8",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js",
+                          "column": 8,
+                          "line": 71
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 69 |\u001b[39m     }\n \u001b[90m 70 |\u001b[39m     expect(messages\u001b[33m,\u001b[39m \u001b[32m'Annual premium 30,500 on income 20,000 was not flagged (DEF-FIN-001)'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 71 |\u001b[39m       \u001b[33m.\u001b[39mtoMatch(\u001b[35m/afford|income/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 72 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js",
+                            "column": 8,
+                            "line": 71
+                          },
+                          "message": "Error: Annual premium 30,500 on income 20,000 was not flagged (DEF-FIN-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/afford|income/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n\u001b[0m \u001b[90m 69 |\u001b[39m     }\n \u001b[90m 70 |\u001b[39m     expect(messages\u001b[33m,\u001b[39m \u001b[32m'Annual premium 30,500 on income 20,000 was not flagged (DEF-FIN-001)'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 71 |\u001b[39m       \u001b[33m.\u001b[39mtoMatch(\u001b[35m/afford|income/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 72 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js:71:8\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:08:15.700Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-2c226-emium-is-blocked-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-2c226-emium-is-blocked-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-2c226-emium-is-blocked-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\client-information-kyc-fin-2c226-emium-is-blocked-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\client-information\\kyc-financial.spec.js",
+                        "column": 8,
+                        "line": 71
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3dc1441c71f0b69dec46-8fab347158e3a328debd",
+              "file": "client-information/kyc-financial.spec.js",
+              "line": 53,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dashboard\\dashboard.spec.js",
+      "file": "dashboard/dashboard.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Dashboard @dashboard",
+          "file": "dashboard/dashboard.spec.js",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-DASH-01 dashboard shows status tiles @smoke",
+              "ok": true,
+              "tags": [
+                "dashboard",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3894,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:08:33.142Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c34829621fa3532cfe3f-444f76773eafaf7059ae",
+              "file": "dashboard/dashboard.spec.js",
+              "line": 7,
+              "column": 3
+            },
+            {
+              "title": "TC-DASH-02 new draft appears on dashboard @regression",
+              "ok": true,
+              "tags": [
+                "dashboard",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5731,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:08:37.276Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c34829621fa3532cfe3f-1698a379c99563b1cc3c",
+              "file": "dashboard/dashboard.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "TC-DASH-03 agent cannot open another agent application @regression",
+              "ok": true,
+              "tags": [
+                "dashboard",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6012,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:08:43.032Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c34829621fa3532cfe3f-30fbf8ecedfb7b5ce940",
+              "file": "dashboard/dashboard.spec.js",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "TC-DASH-04 new agent sees empty state @regression",
+              "ok": false,
+              "tags": [
+                "dashboard",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3169,
+                      "error": {
+                        "message": "Error: New agent has applications: {\"draft\":1,\"submitted\":0,\"underReview\":0,\"approved\":0,\"requiresInfo\":0}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: New agent has applications: {\"draft\":1,\"submitted\":0,\"underReview\":0,\"approved\":0,\"requiresInfo\":0}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\insurance-order-entry-playwright-automation\\tests\\dashboard\\dashboard.spec.js:52:114",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\dashboard\\dashboard.spec.js",
+                          "column": 114,
+                          "line": 52
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 50 |\u001b[39m     \u001b[36mawait\u001b[39m d\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[36mconst\u001b[39m counts \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m d\u001b[33m.\u001b[39mcounts()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     expect(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mvalues(counts)\u001b[33m.\u001b[39mevery((v) \u001b[33m=>\u001b[39m v \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m`New agent has applications: ${JSON.stringify(counts)}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 54 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\dashboard\\dashboard.spec.js",
+                            "column": 114,
+                            "line": 52
+                          },
+                          "message": "Error: New agent has applications: {\"draft\":1,\"submitted\":0,\"underReview\":0,\"approved\":0,\"requiresInfo\":0}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 50 |\u001b[39m     \u001b[36mawait\u001b[39m d\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[36mconst\u001b[39m counts \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m d\u001b[33m.\u001b[39mcounts()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     expect(\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mvalues(counts)\u001b[33m.\u001b[39mevery((v) \u001b[33m=>\u001b[39m v \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m`New agent has applications: ${JSON.stringify(counts)}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 54 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\dashboard\\dashboard.spec.js:52:114\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:08:49.064Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\dashboard-dashboard-Dashbo-71a7b-sees-empty-state-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\dashboard-dashboard-Dashbo-71a7b-sees-empty-state-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\dashboard-dashboard-Dashbo-71a7b-sees-empty-state-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\dashboard-dashboard-Dashbo-71a7b-sees-empty-state-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\dashboard\\dashboard.spec.js",
+                        "column": 114,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c34829621fa3532cfe3f-45cae5f6040416ee23a8",
+              "file": "dashboard/dashboard.spec.js",
+              "line": 47,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "documents\\documents.spec.js",
+      "file": "documents/documents.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Documents @documents",
+          "file": "documents/documents.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-DOC-01 valid PDF uploads @smoke",
+              "ok": true,
+              "tags": [
+                "documents",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10045,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:08:53.296Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "33fe506d355701fe8ff6-0b6fddec3056c7d6d6a4",
+              "file": "documents/documents.spec.js",
+              "line": 6,
+              "column": 3
+            },
+            {
+              "title": "TC-DOC-02 unsupported file type rejected @regression",
+              "ok": true,
+              "tags": [
+                "documents",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7798,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:09:03.540Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "33fe506d355701fe8ff6-8e76a73f8127abb99023",
+              "file": "documents/documents.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "TC-DOC-05 continue skips step validation @regression",
+              "ok": false,
+              "tags": [
+                "documents",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16876,
+                      "error": {
+                        "message": "Error: Continue to Review moved on with no documents uploaded (own finding)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/documents/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/274/review\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Continue to Review moved on with no documents uploaded (own finding) with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/applications/274/review\"\u001b[22m\n",
+                        "stack": "Error: Continue to Review moved on with no documents uploaded (own finding)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/documents/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/274/review\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Continue to Review moved on with no documents uploaded (own finding) with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/applications/274/review\"\u001b[22m\n\n    at C:\\insurance-order-entry-playwright-automation\\tests\\documents\\documents.spec.js:24:96",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\documents\\documents.spec.js",
+                          "column": 96,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m d\u001b[33m.\u001b[39mgoto(draftId)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m d\u001b[33m.\u001b[39mclickContinueToReview()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m'Continue to Review moved on with no documents uploaded (own finding)'\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/documents/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\documents\\documents.spec.js",
+                            "column": 96,
+                            "line": 24
+                          },
+                          "message": "Error: Continue to Review moved on with no documents uploaded (own finding)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/documents/\u001b[39m\nReceived string:  \u001b[31m\"http://34.14.182.252:8081/applications/274/review\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Continue to Review moved on with no documents uploaded (own finding) with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://34.14.182.252:8081/applications/274/review\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m d\u001b[33m.\u001b[39mgoto(draftId)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m d\u001b[33m.\u001b[39mclickContinueToReview()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m'Continue to Review moved on with no documents uploaded (own finding)'\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/documents/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\documents\\documents.spec.js:24:96\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:09:11.360Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\documents-documents-Docume-07f96--step-validation-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\documents-documents-Docume-07f96--step-validation-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\documents-documents-Docume-07f96--step-validation-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\documents-documents-Docume-07f96--step-validation-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\documents\\documents.spec.js",
+                        "column": 96,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "33fe506d355701fe8ff6-e4d339128e4f92860a64",
+              "file": "documents/documents.spec.js",
+              "line": 20,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "product-selection\\product.spec.js",
+      "file": "product-selection/product.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Product configuration @product",
+          "file": "product-selection/product.spec.js",
+          "line": 17,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-PROD-01 catalog lists Whole Life products @smoke",
+              "ok": true,
+              "tags": [
+                "product",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3991,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:09:29.503Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a5a7f4aeb6cf51e4d782-0fcf82a9960ece41ee8e",
+              "file": "product-selection/product.spec.js",
+              "line": 18,
+              "column": 3
+            },
+            {
+              "title": "TC-PROD-02 sum assured below minimum rejected @regression",
+              "ok": true,
+              "tags": [
+                "product",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12892,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:09:33.716Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a5a7f4aeb6cf51e4d782-5ec204d7407293855bbc",
+              "file": "product-selection/product.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "TC-PROD-03 sum assured above maximum rejected @regression",
+              "ok": true,
+              "tags": [
+                "product",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12525,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:09:46.632Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a5a7f4aeb6cf51e4d782-0f621318c4ac69664e6b",
+              "file": "product-selection/product.spec.js",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "TC-PROD-04 premium matches published rate @smoke",
+              "ok": true,
+              "tags": [
+                "product",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11725,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:09:59.183Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a5a7f4aeb6cf51e4d782-54f2e2454886af208a8b",
+              "file": "product-selection/product.spec.js",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "TC-PROD-05 premium recalculates after frequency change @regression",
+              "ok": true,
+              "tags": [
+                "product",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14618,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:10:10.932Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a5a7f4aeb6cf51e4d782-f0e14297353717d66e2b",
+              "file": "product-selection/product.spec.js",
+              "line": 48,
+              "column": 3
+            },
+            {
+              "title": "TC-PROD-06 review premium matches product step @regression",
+              "ok": true,
+              "tags": [
+                "product",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12578,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:10:25.571Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a5a7f4aeb6cf51e4d782-63fb13390ca7ff107665",
+              "file": "product-selection/product.spec.js",
+              "line": 66,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "riders\\riders.spec.js",
+      "file": "riders/riders.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Riders @rider",
+          "file": "riders/riders.spec.js",
+          "line": 13,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-RID-01 eligible rider can be added @smoke",
+              "ok": true,
+              "tags": [
+                "rider",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14634,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:10:38.190Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "979bbece36c5f2489e3a-86bd3cb42ef6b65c0149",
+              "file": "riders/riders.spec.js",
+              "line": 14,
+              "column": 3
+            },
+            {
+              "title": "TC-RID-02 rider premium added to total @regression",
+              "ok": true,
+              "tags": [
+                "rider",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15550,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:10:52.849Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "979bbece36c5f2489e3a-5d26c3843682644b3c67",
+              "file": "riders/riders.spec.js",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "TC-RID-03 rider coverage above base face value rejected @regression",
+              "ok": true,
+              "tags": [
+                "rider",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14375,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:11:08.422Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "979bbece36c5f2489e3a-847b191f94b0f7ec3f31",
+              "file": "riders/riders.spec.js",
+              "line": 38,
+              "column": 3
+            },
+            {
+              "title": "TC-RID-04 both waiver riders cannot be selected @regression",
+              "ok": true,
+              "tags": [
+                "rider",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14197,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:11:22.819Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "979bbece36c5f2489e3a-60d8b8bd2b7f2e148326",
+              "file": "riders/riders.spec.js",
+              "line": 45,
+              "column": 3
+            },
+            {
+              "title": "TC-RID-05 maximum rider count enforced @regression",
+              "ok": true,
+              "tags": [
+                "rider",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14966,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:11:37.043Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "979bbece36c5f2489e3a-7811c8befde05fe06ce0",
+              "file": "riders/riders.spec.js",
+              "line": 56,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "workflow\\journey.spec.js",
+      "file": "workflow/journey.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "End to end submission @e2e @workflow",
+          "file": "workflow/journey.spec.js",
+          "line": 10,
+          "column": 15,
+          "specs": [
+            {
+              "title": "TC-WF-01 full application submits @smoke",
+              "ok": true,
+              "tags": [
+                "e2e",
+                "workflow",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\journey.spec.js",
+                        "line": 10,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20395,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:11:52.046Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\journey.spec.js",
+                            "line": 10,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "81d5257e343034aec04d-115e5a752bfc18e86ac8",
+              "file": "workflow/journey.spec.js",
+              "line": 14,
+              "column": 3
+            },
+            {
+              "title": "TC-WF-04 dashboard shows Submitted after submit @regression",
+              "ok": true,
+              "tags": [
+                "e2e",
+                "workflow",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\journey.spec.js",
+                        "line": 10,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3385,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:12:12.463Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\journey.spec.js",
+                            "line": 10,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "81d5257e343034aec04d-84257fcf6ed479ff816c",
+              "file": "workflow/journey.spec.js",
+              "line": 50,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "workflow\\review.spec.js",
+      "file": "workflow/review.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Review and validation @workflow",
+          "file": "workflow/review.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-DOC-03 missing KYC blocks submission @regression",
+              "ok": false,
+              "tags": [
+                "workflow",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 17005,
+                      "error": {
+                        "message": "Error: Validation passed with no KYC document uploaded (DEF-DOC-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/document|kyc/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m",
+                        "stack": "Error: Validation passed with no KYC document uploaded (DEF-DOC-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/document|kyc/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n    at C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\review.spec.js:13:85",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\review.spec.js",
+                          "column": 85,
+                          "line": 13
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m review\u001b[33m.\u001b[39mrunValidation()\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mconst\u001b[39m errors \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m review\u001b[33m.\u001b[39mblockingErrors())\u001b[33m.\u001b[39mjoin(\u001b[32m' | '\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     expect(errors\u001b[33m,\u001b[39m \u001b[32m'Validation passed with no KYC document uploaded (DEF-DOC-001)'\u001b[39m)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/document|kyc/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m   test(\u001b[32m'TC-DOC-04 submit disabled while errors remain @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ agentPage\u001b[33m:\u001b[39m page\u001b[33m,\u001b[39m draftId }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\review.spec.js",
+                            "column": 85,
+                            "line": 13
+                          },
+                          "message": "Error: Validation passed with no KYC document uploaded (DEF-DOC-001)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/document|kyc/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n\u001b[0m \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m review\u001b[33m.\u001b[39mrunValidation()\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mconst\u001b[39m errors \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m review\u001b[33m.\u001b[39mblockingErrors())\u001b[33m.\u001b[39mjoin(\u001b[32m' | '\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     expect(errors\u001b[33m,\u001b[39m \u001b[32m'Validation passed with no KYC document uploaded (DEF-DOC-001)'\u001b[39m)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/document|kyc/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m   test(\u001b[32m'TC-DOC-04 submit disabled while errors remain @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ agentPage\u001b[33m:\u001b[39m page\u001b[33m,\u001b[39m draftId }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\review.spec.js:13:85\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:12:15.887Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\workflow-review-Review-and-5e7f4-locks-submission-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\workflow-review-Review-and-5e7f4-locks-submission-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\workflow-review-Review-and-5e7f4-locks-submission-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\workflow-review-Review-and-5e7f4-locks-submission-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\review.spec.js",
+                        "column": 85,
+                        "line": 13
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d11d3c0b18e79f9b8637-5eb7c736483538e54476",
+              "file": "workflow/review.spec.js",
+              "line": 6,
+              "column": 3
+            },
+            {
+              "title": "TC-DOC-04 submit disabled while errors remain @regression",
+              "ok": true,
+              "tags": [
+                "workflow",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6956,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:12:35.178Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d11d3c0b18e79f9b8637-b5020b7481050a6bc72e",
+              "file": "workflow/review.spec.js",
+              "line": 16,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "workflow\\submission.spec.js",
+      "file": "workflow/submission.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Submission and status @workflow",
+          "file": "workflow/submission.spec.js",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-WF-02 draft resume keeps beneficiaries @regression",
+              "ok": true,
+              "tags": [
+                "workflow",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9188,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:12:42.510Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "aacb96ffa6f161ca9a43-9d65c7c7d9bf19ec34e4",
+              "file": "workflow/submission.spec.js",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "TC-WF-03 submitted application is read-only @regression",
+              "ok": false,
+              "tags": [
+                "workflow",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5909,
+                      "error": {
+                        "message": "Error: A submitted application was edited (DEF-WF-005)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Edited 17926\u001b[7m59548435\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"Edited 17926\u001b[7m74775651\u001b[27m\"\u001b[39m",
+                        "stack": "Error: A submitted application was edited (DEF-WF-005)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Edited 17926\u001b[7m59548435\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"Edited 17926\u001b[7m74775651\u001b[27m\"\u001b[39m\n    at C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\submission.spec.js:35:101",
+                        "location": {
+                          "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\submission.spec.js",
+                          "column": 101,
+                          "line": 35
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m client\u001b[33m.\u001b[39msave()\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m client\u001b[33m.\u001b[39mgoto(id)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     expect(\u001b[36mawait\u001b[39m client\u001b[33m.\u001b[39moccupation\u001b[33m.\u001b[39minputValue()\u001b[33m,\u001b[39m \u001b[32m'A submitted application was edited (DEF-WF-005)'\u001b[39m)\u001b[33m.\u001b[39mtoBe(before)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m\n \u001b[90m 38 |\u001b[39m   test(\u001b[32m'TC-WF-05 status page matches dashboard @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\submission.spec.js",
+                            "column": 101,
+                            "line": 35
+                          },
+                          "message": "Error: A submitted application was edited (DEF-WF-005)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Edited 17926\u001b[7m59548435\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"Edited 17926\u001b[7m74775651\u001b[27m\"\u001b[39m\n\n\u001b[0m \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m client\u001b[33m.\u001b[39msave()\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m client\u001b[33m.\u001b[39mgoto(id)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     expect(\u001b[36mawait\u001b[39m client\u001b[33m.\u001b[39moccupation\u001b[33m.\u001b[39minputValue()\u001b[33m,\u001b[39m \u001b[32m'A submitted application was edited (DEF-WF-005)'\u001b[39m)\u001b[33m.\u001b[39mtoBe(before)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m\n \u001b[90m 38 |\u001b[39m   test(\u001b[32m'TC-WF-05 status page matches dashboard @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\submission.spec.js:35:101\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:12:51.725Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\workflow-submission-Submis-cb4ed-ion-is-read-only-regression-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\workflow-submission-Submis-cb4ed-ion-is-read-only-regression-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\workflow-submission-Submis-cb4ed-ion-is-read-only-regression-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\insurance-order-entry-playwright-automation\\reports\\test-results\\workflow-submission-Submis-cb4ed-ion-is-read-only-regression-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\insurance-order-entry-playwright-automation\\tests\\workflow\\submission.spec.js",
+                        "column": 101,
+                        "line": 35
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "aacb96ffa6f161ca9a43-d6274b8948fdca932823",
+              "file": "workflow/submission.spec.js",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "TC-WF-05 status page matches dashboard @regression",
+              "ok": true,
+              "tags": [
+                "workflow",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4816,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T13:12:58.941Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "aacb96ffa6f161ca9a43-e12e8786e3c81df4f1da",
+              "file": "workflow/submission.spec.js",
+              "line": 38,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-22T13:00:42.849Z",
+    "duration": 741244.845,
+    "expected": 49,
+    "skipped": 0,
+    "unexpected": 17,
+    "flaky": 0
+  }
+}
