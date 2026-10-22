@@ -39,11 +39,12 @@ test.describe('Submission and status @workflow', () => {
     await loginAs(page, users.submittedAgent);
     const id = await applicationIdByReference(page, seeded.submittedApp);
     const dashboard = new DashboardPage(page);
-    await dashboard.gotoApplicationsList();
+    await dashboard.goto();
     const listed = (await dashboard.statusFor(id).innerText()).trim().toUpperCase();
 
     const status = new ApplicationStatusPage(page);
     await status.goto(id);
-    expect(await status.text(), `Status page does not show ${listed}`).toContain(listed.replace('_', ' '));
+    expect(await status.status(), 'Status page and dashboard show different statuses')
+      .toBe(listed);
   });
 });

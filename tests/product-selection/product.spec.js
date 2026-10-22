@@ -18,8 +18,8 @@ test.describe('Product configuration @product', () => {
   test('TC-PROD-01 catalog lists Whole Life products @smoke', async ({ agentPage: page }) => {
     const catalog = new ProductCatalogPage(page);
     await catalog.goto();
-    for (const { name } of Object.values(ProductConfigurationPage.PRODUCTS)) {
-      await expect(catalog.productName(name.replace(' Whole Life', ''))).toBeVisible();
+    for (const code of ProductCatalogPage.CODES) {
+      await expect(catalog.card(code), `Product ${code} missing from the catalog`).toBeVisible();
     }
   });
 

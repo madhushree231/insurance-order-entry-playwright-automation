@@ -4,9 +4,10 @@ class ReviewPage {
     this.page = page;
     this.root = page.getByTestId('review-page');
 
-    this.validationErrors = page.getByTestId('review-validation-errors');
+    // Error list: test id when present, otherwise the danger alert in the validation card.
+    this.validationErrors = page.locator('[data-testid="review-validation-errors"], [data-testid="review-page"] .alert-danger').first();
     this.validationErrorItems = this.validationErrors.locator('li');
-    this.validationSuccess = page.getByTestId('review-validation-success');
+    this.validationSuccess = page.getByTestId('review-validation-passed');
     this.validateButton = page.getByTestId('review-validate-button');
     this.submitButton = page.getByTestId('review-submit-application-button');
     this.backButton = page.getByTestId('review-back-button');
@@ -34,11 +35,13 @@ class ReviewPage {
 
   async blockingErrors() {
     if (!(await this.validationErrors.isVisible())) return [];
-    return (await this.validationErrorItems.allInnerTexts()).map((t) => t.trim());
+    const items = await this.validationErrorItems.allInnerTexts();
+    if (items.length) return items.map((t) => t.trim());
+    return [(await this.validationErrors.innerText()).trim()];
   }
 
   async hasBlockingErrors() {
-    return this.validationErrors.isVisible();
+    return (await this.validationErrors.isVisible()) || !(await this.validationSuccess.isVisible());
   }
 
   /** True when validation reported no blocking errors. */

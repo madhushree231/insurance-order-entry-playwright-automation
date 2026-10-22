@@ -63,14 +63,14 @@ test.describe('HTTP layer @api', () => {
     const res = await page.request.post(`${BASE()}/applications/${draftId}/validate`, { form: { _token: token } });
     expect(res.ok()).toBe(true);
     const html = await res.text();
-    expect(html, 'Validate on an empty draft returned no errors').toContain('review-validation-errors');
+    expect(html, 'Validate on an empty draft reported no blocking errors').not.toContain('review-validation-passed');
   });
 
   test('TC-API-07 submit endpoint refuses incomplete draft @regression', async ({ agentPage: page, draftId }) => {
     const token = await getToken(page.request, `/applications/${draftId}/review`);
     await page.request.post(`${BASE()}/applications/${draftId}/submit`, { form: { _token: token } });
     const dashboard = new DashboardPage(page);
-    await dashboard.gotoApplicationsList();
+    await dashboard.goto();
     await expect(dashboard.statusFor(draftId), 'An empty draft was submitted directly (DEF-WF-003)').toContainText(/DRAFT/i);
   });
 

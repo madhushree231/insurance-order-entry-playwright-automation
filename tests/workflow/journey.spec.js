@@ -29,7 +29,7 @@ test.describe.serial('End to end submission @e2e @workflow', () => {
 
     const riders = new RiderSelectionPage(page);
     await riders.goto(id);
-    await riders.checkRow(0);
+    await riders.selectIndex(0);
     await riders.save();
 
     await completeSteps(page, id, ['beneficiary', 'document']);
@@ -50,7 +50,7 @@ test.describe.serial('End to end submission @e2e @workflow', () => {
   test('TC-WF-04 dashboard shows Submitted after submit @regression', async ({ page }) => {
     await loginAs(page, users.agent);
     const dashboard = new DashboardPage(page);
-    await dashboard.gotoApplicationsList();
+    await dashboard.goto();
     await expect(dashboard.statusFor(submittedId), 'Dashboard status wrong after submit (DEF-STATUS-001)')
       .toContainText(/SUBMITTED/i);
     await dashboard.goto();

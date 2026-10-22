@@ -1,12 +1,17 @@
 require('dotenv').config();
+
+// Avoid double slashes when BASE_URL ends with '/'
+process.env.BASE_URL = (process.env.BASE_URL || '').trim().replace(/\/+$/, '');
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: './tests',
   timeout: 90000,
   expect: { timeout: 10000 },
-  // Tests share agent accounts, so keep parallel load modest.
-  workers: 2,
+  // One worker: the app appears to end an agent's other sessions when the
+  // same agent signs in again, so parallel tests on one account log each
+  // other out.
+  workers: 1,
   retries: 1,
   reporter: [
     ['list'],

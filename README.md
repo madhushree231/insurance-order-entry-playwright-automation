@@ -37,7 +37,7 @@ fixtures/     users, test data, signed-in page and fresh draft fixtures
 utils/        HTTP helper, dates, file uploads, assertions, wizard helper
 tests/        auth, dashboard, client-information, product-selection,
               riders, beneficiaries, documents, workflow, api
-docs/         test case design sheet
+docs/         test case design sheet, saved HTML of each page (page-snapshots)
 ```
 
 Each test that changes data creates its own draft, so tests do not depend on each other. The only exception is `TC-WF-04`, which checks the application submitted by `TC-WF-01`.
@@ -48,6 +48,8 @@ All accounts are read from `.env`. The seeded ones come from the app's `UserSeed
 
 ## Known limitations
 
+- Tests run with one worker. Signing in as the same agent from a second browser seems to end the first session, so parallel tests on one account log each other out.
+- After login the app opens the agent's latest draft rather than the dashboard. Tests open the dashboard themselves after signing in.
 - The app has no `/api` routes (confirmed with `php artisan route:list`). The API tests check the same risks through the app's web routes using Playwright's request context.
 - `TC-AUTH-07` reads the OTP from the Laravel log, so it only runs fully on the lab VM with `OE_LOG_PATH` set. Otherwise it checks the OTP page appears and skips the rest.
 - `TC-RID-03` and `TC-RID-04` skip with a reason if the page has no rider coverage field or fewer than two waiver riders.

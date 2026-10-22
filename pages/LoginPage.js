@@ -24,7 +24,7 @@ class LoginPage {
 
   /** Logout is a POST form in the header. Submitting it directly avoids the dropdown. */
   async logout() {
-    await this.page.locator('form[action$="/logout"]').first().evaluate((f) => f.submit());
+    await this.page.getByTestId('nav-logout-button').click();
     await this.page.waitForURL(/\/login/);
   }
 

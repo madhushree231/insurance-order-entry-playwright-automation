@@ -51,6 +51,17 @@ class DashboardPage {
 
   async goto() {
     await this.page.goto(`${process.env.BASE_URL}/dashboard`);
+    if (!(await this.root.isVisible())) {
+      throw new Error(
+        `Dashboard did not load. Landed on ${this.page.url()} `
+        + `with title "${await this.page.title()}". The session may have ended.`,
+      );
+    }
+  }
+
+  /** Row on the full applications list. Status is part of the row text. */
+  rowFor(applicationId) {
+    return this.page.getByTestId(`application-row-${applicationId}`);
   }
 
   async gotoApplicationsList() {
